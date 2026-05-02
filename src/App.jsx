@@ -293,28 +293,30 @@ export default function App() {
             </div>
 
             <div className="psection-head">— Bill of Materials —</div>
-            <table className="p-bom">
-              <thead>
-                <tr>
-                  <th style={{ width: '4%', textAlign: 'center' }}>Sr.</th>
-                  <th style={{ width: '20%' }}>Material Name</th>
-                  <th style={{ width: '32%' }}>Specifications</th>
-                  <th style={{ width: '26%' }}>Make / Brand</th>
-                  <th style={{ width: '18%', textAlign: 'center' }}>Warranty</th>
-                </tr>
-              </thead>
-              <tbody>
-                {bom.map((r, i) => (
-                  <tr key={i}>
-                    <td style={{ textAlign: 'center', fontWeight: 600 }}>{i + 1}</td>
-                    <td><strong>{r.mat}</strong></td>
-                    <td>{r.spec}</td>
-                    <td>{r.make}</td>
-                    <td style={{ textAlign: 'center' }}>{r.warranty}</td>
+            <div style={{ overflowX: 'auto', WebkitOverflowScrolling: 'touch' }}>
+              <table className="p-bom">
+                <thead>
+                  <tr>
+                    <th style={{ width: '4%', textAlign: 'center' }}>Sr.</th>
+                    <th style={{ width: '20%' }}>Material Name</th>
+                    <th style={{ width: '32%' }}>Specifications</th>
+                    <th style={{ width: '26%' }}>Make / Brand</th>
+                    <th style={{ width: '18%', textAlign: 'center' }}>Warranty</th>
                   </tr>
-                ))}
-              </tbody>
-            </table>
+                </thead>
+                <tbody>
+                  {bom.map((r, i) => (
+                    <tr key={i}>
+                      <td style={{ textAlign: 'center', fontWeight: 600 }}>{i + 1}</td>
+                      <td><strong>{r.mat}</strong></td>
+                      <td>{r.spec}</td>
+                      <td>{r.make}</td>
+                      <td style={{ textAlign: 'center' }}>{r.warranty}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
 
             <div className="pgen">
               ⚡ Average {system.kw} kW System Generation: <strong>{dailyGen} Units/Day</strong> &nbsp;|&nbsp; {system.kw} × {system.factor} = <strong>{monthlyGen} Units/Month</strong>

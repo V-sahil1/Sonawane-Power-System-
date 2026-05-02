@@ -157,7 +157,8 @@ table.p-bom tr:nth-child(even) td{background:#fafcff}
   .ph-phone, .ph-quot-sub { font-size: 10px; }
   
   .pamount { font-size: 15px; }
-  .p-bom { font-size: 11px; }
+  .p-bom { font-size: 11px; min-width: 500px; }
+  .p-bom th, .p-bom td { padding: 5px 6px; }
   
   .pfooter { flex-direction: column; gap: 15px; text-align: center; }
   .pfooter-right { text-align: center; }
